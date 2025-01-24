@@ -9,6 +9,7 @@ import (
 )
 
 func BenchmarkWriteBytes(b *testing.B) {
+	os.Mkdir("testdata", 0755)
 	b.StopTimer()
 
 	dir, err := os.MkdirTemp("testdata", "write*")
@@ -26,6 +27,9 @@ func BenchmarkWriteBytes(b *testing.B) {
 			b.Fatal(err)
 		}
 		defer out.Close()
+		b.Cleanup(func() {
+			os.RemoveAll(dir)
+		})
 		message := "benchmarking in go!"
 		b.StartTimer()
 		fmt.Fprintf(out, message)
