@@ -38,7 +38,10 @@ func BenchmarkCount(b *testing.B) {
 	if err != nil {
 		b.Fatal(err)
 	}
+
 	for i := 0; i < b.N; i++ {
-		Count(allWords)
+		b.StartTimer()
+		Count(words)
+		b.StopTimer()
 	}
 }
