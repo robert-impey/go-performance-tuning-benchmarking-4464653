@@ -2,8 +2,8 @@ package inline
 
 import (
 	"math/rand"
-	"testing"
 	"runtime"
+	"testing"
 )
 
 func Add(x, y int) int {

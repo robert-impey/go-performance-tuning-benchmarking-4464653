@@ -1,8 +1,8 @@
 package crockford
 
 import (
-	"encoding/base32"
 	"bytes"
+	"encoding/base32"
 
 	"github.com/google/uuid"
 )
