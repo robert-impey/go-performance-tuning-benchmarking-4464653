@@ -1,6 +1,7 @@
 package crockford
 
 import (
+	"runtime"
 	"testing"
 )
 
@@ -29,4 +30,13 @@ func TestEncode(t *testing.T) {
 			}
 		})
 	}
+}
+
+func BenchmarkNewID(b *testing.B) {
+	b.ResetTimer()
+	var id string
+	for i := 0; i < b.N; i++ {
+		id = NewID()
+	}
+	runtime.KeepAlive(&id)
 }
