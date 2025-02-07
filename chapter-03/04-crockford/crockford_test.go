@@ -22,7 +22,6 @@ func TestEncode(t *testing.T) {
 	}
 
 	for name, test := range tests {
-		test := test
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
 			if got, expected := Encode(test.input), test.expected; got != expected {
