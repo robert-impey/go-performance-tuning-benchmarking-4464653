@@ -1,3 +1,6 @@
 go 1.23
 
-use ./chapter-03/04-crockford
+use (
+	./chapter-03/04-crockford
+	./chapter-04/01-benchstat
+)
