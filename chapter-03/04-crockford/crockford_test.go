@@ -23,9 +23,10 @@ func TestEncode(t *testing.T) {
 
 	for name, test := range tests {
 		t.Run(name, func(t *testing.T) {
+			testInClosure := test
 			t.Parallel()
-			if got, expected := Encode(test.input), test.expected; got != expected {
-				t.Fatalf("Expected Encode(%q) to return %q; got %q", test.input, expected, got)
+			if got, expected := Encode(testInClosure.input), testInClosure.expected; got != expected {
+				t.Fatalf("Expected Encode(%q) to return %q; got %q", testInClosure.input, expected, got)
 			}
 		})
 	}
