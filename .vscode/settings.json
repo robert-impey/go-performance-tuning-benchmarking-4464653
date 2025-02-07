@@ -16,5 +16,6 @@
   "files.autoSave": "afterDelay",
   "terminal.integrated.fontSize": 14,
   "workbench.colorTheme": "Visual Studio Dark",
-  "workbench.statusBar.visible": true
+  "workbench.statusBar.visible": true,
+  "git.ignoreLimitWarning": true
 }
